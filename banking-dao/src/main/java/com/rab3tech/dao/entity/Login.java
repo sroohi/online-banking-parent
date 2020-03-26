@@ -37,7 +37,7 @@ public class Login {
 	private String token;
 	private List<CustomerQuestionAnswer> customerQuestionAnswers;
 	
-	 private Set<RoleEntity> roles;
+	 private Set<Role> roles;
 	 
 	 
 	 public Timestamp getLwap() {
@@ -59,11 +59,11 @@ public class Login {
 
 	@ManyToMany(cascade = CascadeType.ALL)
 	 @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "loginid"), inverseJoinColumns = @JoinColumn(name = "rid"))
-	public Set<RoleEntity> getRoles() {
+	public Set<Role> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(Set<RoleEntity> roles) {
+	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
 
